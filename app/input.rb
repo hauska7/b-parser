@@ -10,4 +10,8 @@ class Input
 
     nil
   end
+
+  def clean_arguments_for_file_read!
+    @arguments.reject! { |arg| arg[0] == "-" }
+  end
 end
