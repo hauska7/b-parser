@@ -21,4 +21,24 @@ describe Sorter do
       end
     end
   end
+
+  describe "sort_by_unique_views" do
+    context "with null output" do
+      let(:output) { double("output", puts: nil) }
+
+      context "with example input" do
+        before do
+          ARGV.clear
+          ARGV << "spec/data/webserver.log"
+        end
+        let(:input) { Input.new }
+
+        it "sorts by unique views" do
+          result = Sorter.new(input, output).sort_by_unique_views
+
+          expect(result.first).to eq ["/home", 2]
+        end
+      end
+    end
+  end
 end
