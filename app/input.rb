@@ -9,6 +9,10 @@ class Input
 
     return "most_views" if most_views
 
+    unique_views = @arguments.any? { |arg| arg == "-unique_views" }
+
+    return "unique_views" if unique_views
+
     nil
   end
 
