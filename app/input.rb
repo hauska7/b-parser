@@ -1,6 +1,7 @@
 class Input
-  def initialize(arguments = nil)
+  def initialize(arguments = nil, argf = nil)
     @arguments = arguments || ARGV
+    @argf = argf || ARGF
   end
 
   def get_mode
@@ -13,5 +14,9 @@ class Input
 
   def clean_arguments_for_file_read!
     @arguments.reject! { |arg| arg[0] == "-" }
+  end
+
+  def each_line(&block)
+    @argf.each_line(&block)
   end
 end
