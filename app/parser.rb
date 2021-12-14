@@ -17,5 +17,7 @@ input.clean_arguments_for_file_read!
 case mode
 when "most_views"
   Sorter.new(input, $stdout).sort_by_most_views
+when "unique_views"
+  Sorter.new(input, $stdout).sort_by_unique_views
 end
 
