@@ -1,7 +1,7 @@
 class Sorter
-  def initialize(input, output = nil)
+  def initialize(input, output)
     @input = input
-    @output = output || $stdout
+    @output = output
   end
 
   def sort_by_most_views
