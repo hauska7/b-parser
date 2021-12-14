@@ -1,5 +1,3 @@
-require "pry"
-
 describe "parser" do
   it "ordered page visites from most views to less" do
     result = `ruby app/parser.rb spec/data/webserver.log -most_views`

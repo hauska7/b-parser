@@ -1,6 +1,5 @@
 require_relative "input"
 require_relative "sorter"
-require "pry"
 
 input = Input.new
 mode = input.get_mode
