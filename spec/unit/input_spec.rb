@@ -12,4 +12,20 @@ describe Input do
       end
     end
   end
+
+  describe "clean_arguments_for_file_read!" do
+    context "when filename is an argument" do
+      let(:arguments) { ["log_filename"] }
+
+      context "when -most_views is an argument" do
+        before { arguments << "-most_views" }
+
+        it "only filename remains in arguments" do
+          Input.new(arguments).clean_arguments_for_file_read!
+
+          expect(arguments).to eq ["log_filename"]
+        end
+      end
+    end
+  end
 end
