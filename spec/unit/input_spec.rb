@@ -28,4 +28,16 @@ describe Input do
       end
     end
   end
+
+  describe "each_line" do
+    let(:argf) { double("argf") }
+
+    it "reads input files lines" do
+      allow(argf).to receive(:each_line)
+
+      Input.new([], argf).each_line
+
+      expect(argf).to have_received(:each_line).once
+    end
+  end
 end
